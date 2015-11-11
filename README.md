@@ -1,11 +1,14 @@
-meteor-accounts-stripe
+meteor-stripe-oauth
 ======================
 
-stripe connect package
+Stripe OAuth package for Meteor
 
-Allow users to connect via their stripe account.  
+Allow users to connect to your Meteor app with their Stripe account
 
 
-Atmosphere: `https://atmospherejs.com/mrt/accounts-stripe`
+## Install
+`meteor add billyvg:stripe-oauth`
 
-TO-DO: add how to use
+## Credits
+Forked from https://github.com/krishamoud/meteor-accounts-stripe and
+split into two different packages
