@@ -19,9 +19,9 @@ Package.onUse(function (api) {
     api.export('StripeOAuth');
 
   	api.addFiles([
-      'lib/stripe_configure.html',
-      'lib/stripe_configure.js',
-      'lib/stripe_login_button.css'
+      'stripe_configure.html',
+      'stripe_configure.js',
+      'stripe_login_button.css'
     ], 'client');
 
     api.addFiles('stripe_common.js', ['client', 'server']);
