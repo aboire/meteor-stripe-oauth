@@ -28,7 +28,7 @@ StripeOAuth.requestCredential = function(options, credentialRequestCompleteCallb
     '&client_id=' + config.appId +
     '&scope=' + config.scope +
     '&redirect_uri=' + Meteor.absoluteUrl('_oauth/stripe?close') +
-    '&state=' + credentialToken;
+    '&state=' + OAuth._stateParam('popup', credentialToken);
 
   var dimensions = { width: 650, height: 560 };
   Oauth.initiateLogin(credentialToken, loginUrl, credentialRequestCompleteCallback, dimensions);
