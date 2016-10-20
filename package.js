@@ -3,7 +3,7 @@
 Package.describe({
   summary: 'Stripe OAuth Connector',
   name: 'billyvg:stripe-oauth',
-  version: '0.1.2',
+  version: '0.1.4',
   git: 'https://github.com/Opstarts/stripe-oauth.git',
 });
 
