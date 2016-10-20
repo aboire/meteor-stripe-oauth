@@ -15,6 +15,7 @@ if (!Meteor.settings || !Meteor.settings.Stripe || !Meteor.settings.Stripe.secre
 } else {
   logger.debug({ area: 'stripe', msg: "Successfully configured" });
   Stripe = require('stripe')(Meteor.settings.Stripe.secretKey);
+  Stripe.setApiVersion('2016-07-06');
   Stripe.syncCall = function( /* arguments */ ) {
     if (!Stripe) {
       logger.debug({ area: 'stripe', msg: "Not configured, so returning undefined from stripe call" });
