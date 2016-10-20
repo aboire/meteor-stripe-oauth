@@ -62,18 +62,24 @@ Oauth.registerService('stripe', 2, null, function(query) {
     id: response.stripe_user_id,
   };
 
-  const account = Stripe.syncCall(Stripe.account, 'retrieve');
-  const whiteListed = ['email'];
-
-  const fields = _.pick(account, whiteListed);
+  const account = Stripe.syncCall(Stripe.account, 'retrieve', response.stripe_user_id);
+  const fields = {
+    email: account.email,
+    businessName: account.business_name,
+  };
+  console.log(`account is : ${JSON.stringify(account)}}`);
+  if (account.legal_entity) {
+    fields.businessName = account.legal_entity.business_name;
+    fields.firstName = account.legal_entity.first_name;
+    fields.lastName = account.legal_entity.last_name;
+    fields.defaultCurrency = account.legal_entity.default_currency;
+  }
   _.extend(serviceData, fields);
 
   return {
     serviceData,
     options: {
-      profile: {
-        profile: fields,
-      },
+      profile: fields,
     },
   };
 });
