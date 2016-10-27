@@ -21,7 +21,6 @@ const getTokenResponse = function (query) {
         client_secret: config.secret,
         code:          query.code,
         grant_type:   'authorization_code',
-        redirect_uri: Meteor.absoluteUrl("_oauth/stripe?close"),
       },
     }).content;
   } catch (err) {

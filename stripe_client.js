@@ -22,12 +22,15 @@ StripeOAuth.requestCredential = function(options, credentialRequestCompleteCallb
     scope = options.requestPermissions.join(",");
   }
 
+  const redirectUrl = Meteor.absoluteUrl('_oauth/stripe?close=close');
+
   var loginUrl =
     'https://connect.stripe.com/oauth/authorize' +
-  '?response_type=code' +
+    '?response_type=code' +
     '&client_id=' + config.appId +
     '&scope=' + config.scope +
-    '&redirect_uri=' + Meteor.absoluteUrl('_oauth/stripe?close') +
+    '&stripe_landing=login' +
+    '&redirect_uri=' + redirectUrl +
     '&state=' + OAuth._stateParam('popup', credentialToken);
 
   var dimensions = { width: 650, height: 560 };
