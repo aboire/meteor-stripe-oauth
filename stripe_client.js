@@ -22,7 +22,7 @@ StripeOAuth.requestCredential = function(options, credentialRequestCompleteCallb
     scope = options.requestPermissions.join(",");
   }
 
-  const redirectUrl = Meteor.absoluteUrl('_oauth/stripe?close=close');
+  const redirectUrl = Meteor.absoluteUrl('_oauth/stripe?close');
 
   var loginUrl =
     'https://connect.stripe.com/oauth/authorize' +
