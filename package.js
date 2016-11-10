@@ -3,11 +3,11 @@
 Package.describe({
   summary: 'Stripe OAuth Connector',
   name: 'billyvg:stripe-oauth',
-  version: '0.1.6',
+  version: '0.1.7',
   git: 'https://github.com/Opstarts/stripe-oauth.git',
 });
 
-Package.onUse(function (api) {
+Package.onUse(function(api) {
   api.versionsFrom('1.2');
 
   api.use('http', ['server']);
@@ -18,7 +18,7 @@ Package.onUse(function (api) {
   api.use('random', 'client');
   api.use('underscore', 'server');
   api.use('service-configuration', ['client', 'server']);
-  api.use('andylash:basic-logger@2.0.1', ['client', 'server']);
+  api.use('andylash:basic-logger@2.0.3', ['client', 'server']);
   api.use('oauth-encryption', 'server');
 
   api.export('StripeOAuth');
