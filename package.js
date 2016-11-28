@@ -18,7 +18,7 @@ Package.onUse(function(api) {
   api.use('random', 'client');
   api.use('underscore', 'server');
   api.use('service-configuration', ['client', 'server']);
-  api.use('andylash:basic-logger@2.0.3', ['client', 'server']);
+  //api.use('andylash:basic-logger@2.0.3', ['client', 'server']);
   api.use('oauth-encryption', 'server');
 
   api.export('StripeOAuth');
